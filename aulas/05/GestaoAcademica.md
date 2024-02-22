@@ -15,6 +15,7 @@ Entidades:
 - Aluno
 - Disciplina
 - Professor
+- Professor
 - Matrícula
 
 Relacionamentos
@@ -23,10 +24,9 @@ Relacionamentos
 - Um Curso é composto por várias Disciplinas
 - Uma Disciplina pode pertencer a diferentes Cursos
 - Um Professor leciona uma ou mais Disciplinas
-- Uma Disciplina pode ser leconada por um ou mais Professores
-- Um Aluno realiza uma ou mais Matriculas
-- Uma Matricula rstá associada a um Aluno e um Curso
- 
+- Uma Disciplina pode ser lecionada por um ou mais Professores
+- Um Aluno realiza uma ou mais Matrículas
+- Uma Matrícula está associada a um Aluno e um Curso
 
 Agora, com base nessas entidades e relacionamentos, desenvolva um modelo conceitual no DrawIO representando visualmente a estrutura e as interações entre esses elementos.
 
