@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Professor_Disciplina(
 CREATE TABLE IF NOT EXISTS Disciplina_Curso(
     Disciplina_ID INT,
     Curso_ID INT,
-    PRIMARY KEY(Disciplina_ID, Curso_ID)
+    PRIMARY KEY(Disciplina_ID, Curso_ID),
     FOREIGN KEY (Disciplina_ID) REFERENCES Disciplina(Id),
     FOREIGN KEY (Curso_ID) REFERENCES Curso(Id)
 );
