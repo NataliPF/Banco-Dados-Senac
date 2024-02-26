@@ -3,7 +3,7 @@ USE gestaoacademica;
 
 INSERT INTO aluno (Matricula, nome, cpf) values 
 (5, 'Pedro Rocha', '56789012345'),
-(6, 'Monica Sousa', '67890123456'),
+(6, 'Mônica Sousa', '67890123456'),
 (7, 'Fábio Silva', '78901234567');
 
 select * from aluno;
@@ -42,12 +42,12 @@ INSERT INTO professor (id, nome, Especializacao) values
 (2,'João', 'Idiomas'),
 (3,'Maria', 'Filosofia'),
 (4,'José', 'Pedagogia'),
-(5,'Joselito', 'Matematica');
+(5,'Joselito', 'Matemática');
 
 select *from disciplina;
 INSERT INTO disciplina (id, horas, nome) values
-(1, 50, 'Matematica "Avançado" II'),
-(2, 40, "Ingles Tecnico"),
+(1, 50, 'Matemática "Avançado" TI'),
+(2, 40, "Inglês Tecnico"),
 (3, 60, "Filosofia");
 
 select *from professor_disciplina;
@@ -60,3 +60,22 @@ INSERT INTO professor_disciplina (Professor_ID, Disciplina_ID) values
 (5,3),
 (2,3), 	
 (1,3);
+
+-- Atualiza o registro na tabela DDL Update
+UPDATE professor 
+SET especializacao = 'Inteligencia Artifical' 
+WHERE id = 5;
+
+select * from disciplina;
+
+UPDATE disciplina
+SET nome = 'Matemática Avançada', horas = 80
+WHERE ID = 1; 
+
+-- Update de toas as horas para 40 onde Horas for maior que 40
+UPDATE disciplina
+SET horas = 40
+WHERE horas > 40;
+
+-- DML Delete
+DELETE FROM disciplina WHERE id = 3;
