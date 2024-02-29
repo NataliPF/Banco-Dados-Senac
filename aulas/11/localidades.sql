@@ -31,7 +31,7 @@ INSERT INTO CIDADE (Nome, Estado_ID) VALUES
     ('Rio de Janeiro', 2),
     ('Niterói', 2),
     ('Salvador', 3),
-    ('Feira de Santana', 3);
+    ('Fira de Santana', 3);
     
 -- Inserção de Cidades Fictícias sem Estado
 INSERT INTO CIDADE (Nome, Estado_ID) VALUES
@@ -43,3 +43,6 @@ INSERT INTO CIDADE (Nome, Estado_ID) VALUES
 -- -----------------------
 -- Consultas SQL com JOINs
 -- -----------------------
+SELECT CIDADE.Nome, Estado.Nome AS Nome_Estado, ESTADO.Sigla AS UF
+FROM CIDADE
+INNER JOIN ESTADO ON CIDADE.Estado_ID = ESTADO.ID;
