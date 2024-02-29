@@ -31,7 +31,7 @@ INSERT INTO CIDADE (Nome, Estado_ID) VALUES
     ('Rio de Janeiro', 2),
     ('Niterói', 2),
     ('Salvador', 3),
-    ('Fira de Santana', 3);
+    ('Feira de Santana', 3);
     
 -- Inserção de Cidades Fictícias sem Estado
 INSERT INTO CIDADE (Nome, Estado_ID) VALUES
