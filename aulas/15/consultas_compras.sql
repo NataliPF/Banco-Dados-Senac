@@ -37,7 +37,33 @@ JOIN produto ON itenspedido.produtoId = produto.id
 JOIN cliente ON pedido.clienteId = cliente.id
 GROUP BY pedido.clienteId;
 
+-- Encontrar produtos com o preço entre 50 e 150 reais
+SELECT * 
+FROM produto
+WHERE preco >= 50 AND preco <=150;
+-- OU --
+SELECT * FROM produto
+WHERE preco BETWEEN 50 AND 150;
 
-SELECT * FROM PEDIDO;
+-- Mostre tudo dos produtos com ID 1, 5 e 7
+SELECT * FROM produto
+WHERE ID = 1 OR ID = 5 OR ID = 7;
 
+-- OU ------
+SELECT * 
+FROM produto
+WHERE ID IN (1,3,7);
+
+-- Mostre todos os cliente que o sobrenome termine com "A"
+SELECT * FROM cliente
+WHERE sobrenome LIKE '%a';
+
+-- Mostre os 5 produtos mais caros da loja 
+SELECT * FROM produto 
+ORDER BY preco DESC
+LIMIT 5;
+
+-- Listabdo os produtos por página, cada págian cabendo 2 produtos  me mostre a página 3
+SELECT * FROM produto 
+LIMIT 2 OFFSET 4; 
 
