@@ -22,6 +22,7 @@ Crie um novo script e cole nele os seguintes comentários:
 
 Resolva as consultas que conseguir. Para as que não conseguir, adicione comentários informando suas dúvidas e até onde conseguiu evoluir seu código.
 
+<<<<<<< HEAD
 Envie um commit com a solução para o sue respositório e me encaminhe o link no Teams.
 
 Exemplo Join N*N
@@ -33,3 +34,6 @@ JOIN professores_disciplinas
 ON Professor.ID = professores_disciplinas.Professor_ID
 JOIN disciplina 
 ON professores_disciplinas.Disciplina_ID = disciplina.Id;
+=======
+Envie um commit com a solução para o sue respositório e me encaminhe o link no Teams.
+>>>>>>> 1234ce34c8492d2ae4ddd61c8bbb61bf4b786a3f

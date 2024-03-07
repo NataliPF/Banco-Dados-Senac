@@ -37,6 +37,7 @@ JOIN produto ON itenspedido.produtoId = produto.id
 JOIN cliente ON pedido.clienteId = cliente.id
 GROUP BY pedido.clienteId;
 
+<<<<<<< HEAD
 -- Encontrar produtos com o preço entre 50 e 150 reais
 SELECT * 
 FROM produto
@@ -70,3 +71,9 @@ SELECT * FROM pedido
 WHERE dataPedido BETWEEN '2024-03-01' AND '2024-03-05'
 ORDER BY dataPedido
 LIMIT 5;
+=======
+
+SELECT * FROM PEDIDO;
+
+
+>>>>>>> 1234ce34c8492d2ae4ddd61c8bbb61bf4b786a3f

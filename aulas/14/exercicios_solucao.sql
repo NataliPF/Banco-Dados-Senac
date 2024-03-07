@@ -47,5 +47,9 @@ GROUP BY Professor.Nome;
 SELECT Curso.Nome, COUNT(DISTINCT Matricula.Aluno_ID) AS QuantidadeAlunos
 FROM Matricula
 JOIN Curso ON matricula.curso_id = curso.id
+<<<<<<< HEAD
 GROUP BY Curso.Nome;
 
+=======
+GROUP BY Curso.Nome;
+>>>>>>> 1234ce34c8492d2ae4ddd61c8bbb61bf4b786a3f
