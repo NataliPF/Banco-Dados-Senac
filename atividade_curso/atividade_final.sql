@@ -38,6 +38,7 @@ INSERT INTO Categoria (Nome, Descricao, UsuarioAtualizacao) VALUES
 ('Livros', 'Categoria relacionada a produtos literários.', 3),
 ('Alimentos', 'Categoria relacionada a produtos alimentícios.', 4),
 ('Tecnologia', 'Categoria relacionada a produtos de tecnologia.', 5);
+
 INSERT INTO Cliente (Nome, Email, Telefone, UsuarioAtualizacao) VALUES
 ('Natali Projetti', 'nana_projetti', '123456789', 1),
 ('Maria Oliveira', 'maria@example.com', '987654321', 2),
@@ -128,7 +129,8 @@ SELECT Nome AS Nome_do_produto, preco AS Preco_unitário
 FROM produto;
 
 -- 8. Selecione os produtos da tabela Produto, adicionando uma coluna calculada "Preço Total" multiplicando a quantidade pelo preço:
-
+SELECT nome, (preco * 2) AS preco_total
+FROM Produto;
 
 -- 9. Selecione os produtos da tabela Produto, mostrando apenas os 10 primeiros registros:
 SELECT * 
@@ -142,14 +144,23 @@ LIMIT 10 OFFSET 5;
 
 ############# DQL - Joins
 -- 1. Selecione o nome do produto e sua categoria:
-
+SELECT  produto.Nome, categoria.Nome
+ FROM produto
+JOIN categoria ON produto.categoriaID = categoria.Id;
 
 -- 2. Selecione o nome do cliente e o nome do produto que ele comprou:
-
-
+SELECT cliente.Nome, produto.Nome 
+FROM pedido
+JOIN cliente ON cliente.id = pedido.clienteID
+JOIN itempedido ON itempedido.pedidoId = pedido.id
+JOIN produto ON produto.Id = itempedido.produtoid;
+-- OBS: NÃO CONSEGUI ASSOCIAR CLIENTE COM NOME DO PRODUTO
+ 
 -- 3. Selecione todos os produtos, mesmo aqueles que não têm uma categoria associada:
-
-
+SELECT produto.nome,  produto.descricao, produto.preco, categoria.nome AS categoria
+FROM produto
+LEFT JOIN categoria ON produto.CategoriaID = categoria.ID;
+ 
 -- 4. Selecione todos os clientes, mesmo aqueles que não fizeram nenhum pedido:
 
 
@@ -180,14 +191,19 @@ LIMIT 10 OFFSET 5;
 
 ##### Crie uma transaction que cadastra um cliente e faça uma venda
 -- Início da transação
+START TRANSACTION;
 
 -- Inserir um novo cliente
-
+INSERT INTO Cliente (Nome, Email, Telefone, UsuarioAtualizacao) VALUES
+('Maria', 'maria@example.com', '123456789', 1);
 
 -- Inserir um novo pedido para o cliente
-
+INSERT INTO Pedido (ClienteId, DataPedido, FormaPagamentoId, status, UsuarioAtualizacao) VALUES 
+(2, CURRENT_DATE(), 3, 'Processando', 1);
 
 -- Inserir itens no pedido
-
+INSERT INTO Pedido (ClienteId, DataPedido, FormaPagamentoId, status, UsuarioAtualizacao) VALUES 
+(2, CURRENT_DATE(), 3, 'Processando', 1);
 
 -- Commit da transação (confirmação das alterações)
+COMMIT
